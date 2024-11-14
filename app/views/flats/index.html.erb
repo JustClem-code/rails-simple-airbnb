@@ -1,0 +1,28 @@
+<div class="text-center mb-20">
+<h1 class="text-lg">Weed BNB</h1>
+</div>
+<div class="grid grid-cols-4 gap-4">
+  <% @flats.each do |flat|%>
+    <%= link_to flat_path(flat), class: "no-underline" do %>
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2"><%= flat.name%></div>
+          <p class="text-gray-700 text-base">
+            <%= flat.description%>
+          </p>
+          <p class="text-gray-700 text-base">
+            <%= flat.address%>
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><%= flat.price_per_night%> €/per night</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><%= flat.number_of_guests%> guests</span>
+        </div>
+      </div>
+    <%end%>
+  <%end%>
+</div>
+<div>
+  <%= link_to 'New', new_flat_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"%>
+</div>
